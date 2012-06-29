@@ -8,7 +8,7 @@ Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Search in Place improves blog search by displaying query results in real time. Search in place displays a list with results dynamically as you enter the search criteria.
+Search in Place improves blog search by displaying query results in real time. It displays the results dynamically as you enter the search criteria.
 
 == Description ==
 
