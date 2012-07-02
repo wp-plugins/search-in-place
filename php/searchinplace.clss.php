@@ -261,7 +261,7 @@ class CodePeopleSearchInPlace {
 							</tr>
 						</tbody>
 					</table>
-					<h3>'.__('The next options are only available for the advanced version of Search in Place', $this->text_domain).'</h3>	
+					<h3>'.__('The next options are only available for the advanced version of Search in Place', $this->text_domain).'. <a href="http://wordpress.dwbooster.com/content-tools/search-in-place" target="_blank">'.__('Here').'</a></h3>	
 					<h3 style="color:#DDD;">'.__('In Search Page', $this->text_domain).'</h3>
 					<table class="form-table" style="color:#DDD;">	
 						<tbody>
