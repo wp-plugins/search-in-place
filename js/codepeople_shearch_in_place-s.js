@@ -1,3 +1,4 @@
+jQuery(function(){
 (function ($){
 	var searchInPlace = function(){
 		$('.item', '.search-in-place').live('mouseover mouseout', function(){$(this).toggleClass('active');})
@@ -165,4 +166,4 @@
 		searchObj.autocomplete();
 	});	
 })(jQuery);
-
+});
