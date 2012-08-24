@@ -158,7 +158,16 @@ class CodePeopleSearchInPlace {
 		array_unshift($links, $settings_link); 
 		return $links; 
 	} // End settingsLink
- 
+	
+	/*
+		Set a link to contact page
+	*/
+	function customizationLink($links) { 
+		$settings_link = '<a href="http://wordpress.dwbooster.com/contact-us" target="_blank">'.__('Request custom changes').'</a>'; 
+		array_unshift($links, $settings_link); 
+		return $links; 
+	} // End settingsLink
+	
 	/**
 		Print out the admin page
 	*/
@@ -206,6 +215,8 @@ class CodePeopleSearchInPlace {
 			<div class="wrap">
 				<form method="post" action="'.$_SERVER['REQUEST_URI'].'">
 					<h2>Search In Place</h2>
+					<div>'.__('For more information go to the <a href="http://wordpress.dwbooster.com/content-tools/search-in-place" target="_blank">Search in Place</a> plugin page').'</div>
+					
 					<table class="form-table">
 						<tbody>
 							<tr valign="top">

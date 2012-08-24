@@ -44,6 +44,7 @@ register_activation_hook(__FILE__, array(&$codepeople_search_in_place_obj, 'acti
 register_deactivation_hook(__FILE__, array(&$codepeople_search_in_place_obj, 'deactivePlugin'));
 
 $plugin = plugin_basename(__FILE__);
+add_filter('plugin_action_links_'.$plugin, array(&$codepeople_search_in_place_obj, 'customizationLink'));
 add_filter('plugin_action_links_'.$plugin, array(&$codepeople_search_in_place_obj, 'settingsLink'));
 
 add_action('init', 'CodePeopleSearchInPlace');
