@@ -4,7 +4,7 @@ Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_i
 Tags: search, ajax, highlight, post, page, attachment
 Requires at least: 3.0.5
 Tested up to: 3.4
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -73,6 +73,9 @@ http://wordpress.dwbooster.com/faq/search-in-place
 3.	Search in Place's Setup page.
 
 == Changelog ==
+
+= 1.0.2 =
+This version resolves an issue with the "More Results" link in sub-pages and multisite installations.
 
 = 1.0.2 =
 If the post has associated a Featured image, it will be shown on dynamic search dialog.

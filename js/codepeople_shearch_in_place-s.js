@@ -128,7 +128,7 @@ jQuery(function(){
 		},
 		
 		removeLoading : function(c, e){
-			var s = (typeof c.length != 'undefined') ? codepeople_search_in_place.empty : '<a href="?s='+this.search+'&submit=Search">'+codepeople_search_in_place.more+' &gt;</a>';
+			var s = (typeof c.length != 'undefined') ? codepeople_search_in_place.empty : '<a href="'+codepeople_search_in_place.home+'?s='+this.search+'&submit=Search">'+codepeople_search_in_place.more+' &gt;</a>';
 			e.find('.loading').parent().addClass('more').html(s);
 			
 		},
