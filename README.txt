@@ -74,7 +74,7 @@ http://wordpress.dwbooster.com/faq/search-in-place
 
 == Changelog ==
 
-= 1.0.2 =
+= 1.0.3 =
 This version resolves an issue with the "More Results" link in sub-pages and multisite installations.
 
 = 1.0.2 =

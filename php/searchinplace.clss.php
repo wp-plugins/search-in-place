@@ -276,32 +276,81 @@ class CodePeopleSearchInPlace {
 							</tr>
 						</tbody>
 					</table>
-					<h3>'.__('The next options are only available for the advanced version of Search in Place', $this->text_domain).'. <a href="http://wordpress.dwbooster.com/content-tools/search-in-place" target="_blank">'.__('Here').'</a></h3>	
-					<h3 style="color:#DDD;">'.__('In Search Page', $this->text_domain).'</h3>
-					<table class="form-table" style="color:#DDD;">	
+					<h3 style="border:1px solid #FFCC66;background-color:#FFFFCC;padding:10px;">'.__('The next options are only available for the advanced version of Search in Place', $this->text_domain).'. <a href="http://wordpress.dwbooster.com/content-tools/search-in-place" target="_blank">'.__('CLICK HERE for more information').'</a></h3>	
+					<h3>'.__('Search in', $this->text_domain).'</h3>
+					<table class="form-table">	
+						<tbody>
+							<tr valign="top">
+								<th>
+									'.__('Posts/Pages comon data (title, content):').'
+								</th>
+								<td>
+									<input type="checkbox" name="post_data" id="post_data" checked disabled />
+								</td>
+							</tr>
+							<tr valign="top">
+								<th>
+									'.__('Posts/Pages metadata (additional data of articles):').'
+								</th>
+								<td>
+									<input type="checkbox" name="post_metadata" id="post_metadata" onclick="forbiddenOption(this);" />
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<h3>'.__('In Search Page', $this->text_domain).'</h3>
+					<table class="form-table">	
 						<tbody>
 							<tr valign="top">
 								<th scope="row">
-									<label for="highlight" style="color:#DDD;">'.__("Highlight the terms in result", $this->text_domain).'</label>
+									<label for="highlight">'.__("Highlight the terms in result", $this->text_domain).'</label>
 								</th>
 								<td>
-									<input type="checkbox" name="highlight" id="highlight" value="1" disabled />
+									<input type="checkbox" name="highlight" id="highlight" onclick="forbiddenOption(this);" />
 								</td>
 							</tr>
+							<tr><td colspan="2" style="font-style:italic;" >
+							'.__('Highlights the search terms on search page.', $this->text_domain).'
+							</td></tr>
 							<tr valign="top">
 								<th scope="row">
-									<label for="mark_post_type" style="color:#DDD;">'.__("Identify the posts type in search result", $this->text_domain).'</label>
+									<label for="mark_post_type">'.__("Identify the posts type in search result", $this->text_domain).'</label>
 								</th>
 								<td>
-									<input type="checkbox" name="mark_post_type" id="mark_post_type" value="1" disabled />
+									<input type="checkbox" name="mark_post_type" id="mark_post_type" onclick="forbiddenOption(this);" />
+								</td>
+								<tr><td colspan="2" style="font-style:italic;" >
+								'.__('Indicates the type of document (article or page)', $this->text_domain).'
+								</td></tr>
+							</tr>
+						</tbody>
+					</table>
+					<h3>'.__('In Resulting Pages', $this->text_domain).'</h3>
+					<table class="form-table">	
+						<tbody>
+							<tr valign="top">
+								<th scope="row">
+									<label for="highlight">'.__("Highlight the terms in resulting pages", $this->text_domain).'</label>
+								</th>
+								<td>
+									<input type="checkbox" name="highlight_resulting_page" id="highlight_resulting_page" onclick="forbiddenOption(this);" />
 								</td>
 							</tr>
+							<tr><td colspan="2" style="font-style:italic;" >
+							'.__('Highlights the search terms on resulting page.', $this->text_domain).'
+							</td></tr>
 						</tbody>
 					</table>
 					<input type="hidden" name="search_in_place_submit" value="ok" />
 					<div class="submit"><input type="submit" class="button-primary" value="'.__('Update Settings', $this->text_domain).'" /></div>
 				</form>
 			</div>
+			<script>
+				function forbiddenOption(e){
+					e.checked = false;
+					window.alert("'.__('The option selected is available only in the advanced version, please go to the product\'s webpage  through the previous link', $this->text_domain).'");
+				}
+			</script>
 		';		
 	} // End printAdminPage
 	
