@@ -21,7 +21,7 @@ Search in Place improves blog search by displaying query results in real time. I
 
 *  Performs **real time search** as you enter search criteria;
 *  Use a friendly AJAX technology for searching.
-*  Groups search results **by post type** (post, page, attachment or other entered by the user);
+*  Groups search results **by post type** (post, page, attachment or other post type entered by the user);
 *  Allows to **highlight the keywords** used to run the search, in search results and resulting pages; 
 *  Allows to search in metadata associated to the posts; 
 *  Allows to **limit the number of elements** in the dynamic search results.
@@ -52,7 +52,7 @@ If you want more information about this plugin or another one don't doubt to vis
 
 **Elements to display:** defines the elements that will be shown for each dynamic search result. The post title will always be visible, but the featured image, the author, the publication date, and the post summary can be visible or not depending on this setting option.
 
-**Post type:**: allows to enter additional post types for searching. Some plugins include new post types to treat products, catalogs or any other new element.
+**Post type:** allows to enter additional post types for searching. Some plugins include new post types to treat products, catalogs or any other new element.
 
 **Select the Date Format:** allows to select the format of publication date to be shown in the dynamic search results.
 
