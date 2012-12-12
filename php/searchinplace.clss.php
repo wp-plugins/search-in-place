@@ -219,8 +219,7 @@ class CodePeopleSearchInPlace {
 			<div class="wrap">
 				<form method="post" action="'.$_SERVER['REQUEST_URI'].'">
 					<h2>Search In Place</h2>
-					<div>'.__('For more information go to the <a href="http://wordpress.dwbooster.com/content-tools/search-in-place" target="_blank">Search in Place</a> plugin page').'</div>
-					
+					<p  style="border:1px solid #E6DB55;margin-bottom:10px;padding:5px;background-color: #FFFFE0;">'.__('For more information go to the <a href="http://wordpress.dwbooster.com/content-tools/search-in-place" target="_blank">Search in Place</a> plugin page.').' <br />'.__('For any issues with Search in Place, go to our <a href="http://wordpress.dwbooster.com/contact-us" target="_blank">contact page</a> and leave us a message.').'</p>
 					<table class="form-table">
 						<tbody>
 							<tr valign="top">
@@ -276,13 +275,70 @@ class CodePeopleSearchInPlace {
 							</tr>
 						</tbody>
 					</table>
-					<h3 style="border:1px solid #FFCC66;background-color:#FFFFCC;padding:10px;">'.__('The next options are only available for the advanced version of Search in Place', $this->text_domain).'. <a href="http://wordpress.dwbooster.com/content-tools/search-in-place" target="_blank">'.__('CLICK HERE for more information').'</a></h3>	
+					<p style="border:1px solid #FFCC66;background-color:#FFFFCC;padding:10px;">'.__('The next options are available only for the advanced version of Search in Place', $this->text_domain).'. <a href="http://wordpress.dwbooster.com/content-tools/search-in-place" target="_blank">'.__('CLICK HERE for more information').'</a></p>	
+					<h3>'.__('Search box design').'</h3>
+					<table class="form-table">	
+						<tbody>
+							<tr valign="top">
+								<th scope="row">
+									<label for="box_background_color">'.__("Background color").'</label>
+								</th>
+								<td>
+									<input type="text" name="box_background_color" id="box_background_color" value="#F9F9F9" disabled />
+								</td>
+							</tr>
+							<tr valign="top">
+								<th scope="row">
+									<label for="box_border_color">'.__("Border color").'</label>
+								</th>
+								<td>
+									<input type="text" name="box_border_color" id="box_border_color" value="#DDDDDD" disabled />
+								</td>
+							</tr>
+							<tr valign="top">
+								<th scope="row">
+									<label for="label_text_color">'.__("Label text color").'</label>
+								</th>
+								<td>
+									<input type="text" name="label_text_color" id="label_text_color" value="#333333" disabled />
+								</td>
+							</tr>
+							<tr valign="top">
+								<th scope="row">
+									<label for="label_text_shadow">'.__("Label text shadow").'</label>
+								</th>
+								<td>
+									<input type="text" name="label_text_shadow" id="label_text_shadow" value="#FFFFFF" disabled />
+								</td>
+							</tr>
+							<tr valign="top">
+								<th scope="row">
+									<label>'.__("Label background color").'</label>
+								</th>
+								<td>
+									Gradient start color: 
+									<input type="text" name="label_background_start_color" id="label_background_start_color" value="#F9F9F9" disabled />
+									Gradient end color:
+									<input type="text" name="label_background_end_color" id="label_background_end_color" value="#ECECEC" disabled />
+								</td>
+							</tr>
+							<tr valign="top">
+								<th scope="row">
+									<label for="active_item_background_color">'.__("Background color of active item").'</label>
+								</th>
+								<td>
+									<input type="text" name="active_item_background_color" id="active_item_background_color" value="#FFFFFF" disabled />
+								</td>
+							</tr>
+						</tbody>
+					</table>	
+					
 					<h3>'.__('Search in', $this->text_domain).'</h3>
 					<table class="form-table">	
 						<tbody>
 							<tr valign="top">
 								<th>
-									'.__('Posts/Pages comon data (title, content):').'
+									'.__('Posts/Pages common data (title, content):').'
 								</th>
 								<td>
 									<input type="checkbox" name="post_data" id="post_data" checked disabled />
@@ -294,6 +350,17 @@ class CodePeopleSearchInPlace {
 								</th>
 								<td>
 									<input type="checkbox" name="post_metadata" id="post_metadata" onclick="forbiddenOption(this);" />
+								</td>
+							</tr>
+							<tr valign="top">
+								<th>
+									'.__('Posts Type:').'
+								</th>
+								<td>
+									
+									<input type="text" value="post" disabled style="color:#999999;" class="post-type" />  enabled by default <br />
+									<input type="text" value="page" disabled style="color:#999999;" class="post-type" />  <br />
+							        <input type="button" value="Add new type" class="button-primary" onclick="window.alert(\'This feature is available only on the commercial version\');"/>
 								</td>
 							</tr>
 						</tbody>

@@ -1,7 +1,7 @@
 === Search in Place ===
 Contributors: codepeople
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GZX2Y9BBJKWN2
-Tags: search, ajax, highlight, post, page, attachment
+Tags: search, ajax, post, posts, page, post search, page search, content, title, highlight, attachment, navigation
 Requires at least: 3.0.5
 Tested up to: 3.4
 Stable tag: trunk
@@ -14,20 +14,23 @@ Search in Place improves blog search by displaying query results in real time. I
 
 **Search in Place** improves blog search by displaying query results in real time. Search in place displays a list with results dynamically as you enter the search criteria. 
 
-**Search in Place** groups search results by their type, labeling them as post, page, or attachment, and highlights the searched terms.
+**Search in Place** groups search results by their type, labeling them as post, page, attachment or the post type entered, and highlights the searched terms in search page and resulting pages. Search in Place advanced allows to search in metadata too.
 
 
 **Features:**
 
 *  Performs **real time search** as you enter search criteria;
-*  Groups search results **by post type** (post, page, attachment);
-*  Allows to **highlight the keywords** used to run the search, in search results (Advanced version only); 
+*  Use a friendly AJAX technology for searching.
+*  Groups search results **by post type** (post, page, attachment or other entered by the user);
+*  Allows to **highlight the keywords** used to run the search, in search results and resulting pages; 
+*  Allows to search in metadata associated to the posts; 
 *  Allows to **limit the number of elements** in the dynamic search results.
-
+*  Allows to customize the **box colors**
+*  Offers a different navigation option on the website.
 
 If you want more information about this plugin or another one don't doubt to visit my website:
 
-[http://wordpress.dwbooster.com](http://wordpress.dwbooster.com "CodePeople WordPress Repository")
+[http://wordpress.dwbooster.com/content-tools/search-in-place](http://wordpress.dwbooster.com/content-tools/search-in-place "CodePeople WordPress Repository")
 
 == Installation ==
 
@@ -45,16 +48,31 @@ If you want more information about this plugin or another one don't doubt to vis
 
 **Enter a minimum number of characters to start a search:** The dynamic search will be activated only when the entered search term equals or exceeds the number of characters specified in this setup field.
 
+**Posts/Pages metadata (additional data of articles):** Allows to search the terms in metadata associated to the articles.
+
 **Elements to display:** defines the elements that will be shown for each dynamic search result. The post title will always be visible, but the featured image, the author, the publication date, and the post summary can be visible or not depending on this setting option.
+
+**Post type:**: allows to enter additional post types for searching. Some plugins include new post types to treat products, catalogs or any other new element.
 
 **Select the Date Format:** allows to select the format of publication date to be shown in the dynamic search results.
 
 **Enter the number of characters for post summaries:**  if you choose to display post summaries in search results, you can use this option to limit the amount of characters  in these summaries.
 
-**Highlight the terms in result:** Check this option if you wish to highlight the terms that were searched, in the dynamic search results (Advanced version only). 
+**Background color:** Select the background color of results box.
 
-**Identify the posts type in search result:** if this option is checked, each search result will be identified by type (post or page)(Advanced version only). 
+**Border color:** Select the border color of results box.
 
+**Label text color:** Select the text color of labels.
+
+**Label background color:** Select the background color of labels section. The label's sections is a gradient.
+
+**Background color of active item:** Select the background color of item when the mouse is set over it.
+
+**In Search Page/Highlight the terms in result:** Check this option if you wish to highlight the terms that were searched, in the dynamic search results.
+
+**In Search Page/Identify the posts type in search result:** if this option is checked, each search result will be identified by type (post or page). 
+
+**In Resulting Pages/Highlight the terms in result:** Check this option if you wish to highlight the terms that were searched, in the resulting pages.
 
 == Frequently Asked Questions ==
 
