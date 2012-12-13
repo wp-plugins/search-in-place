@@ -3,7 +3,7 @@ Contributors: codepeople
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GZX2Y9BBJKWN2
 Tags: search, ajax, post, posts, page, post search, page search, content, title, highlight, attachment, navigation
 Requires at least: 3.0.5
-Tested up to: 3.4
+Tested up to: 3.5
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
