@@ -77,7 +77,7 @@ class CodePeopleSearchInPlace {
 			if(get_option('search_in_place_display_thumbnail')){
 				if ( function_exists('has_post_thumbnail') && has_post_thumbnail($result->ID) ) {
 					// If post thumbnail is used
-					$obj->thumbnail = wp_get_attachment_url(get_post_thumbnail_id($result->ID, 'thumbnail'));
+					$obj->thumbnail = wp_get_attachment_thumb_url(get_post_thumbnail_id($result->ID, 'thumbnail'));
 				}elseif(function_exists('get_post_image_id')) {
 					// Support for WP 2.9 post thumbnails
 					$imgID = get_post_image_id($result->ID);
