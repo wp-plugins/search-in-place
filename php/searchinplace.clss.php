@@ -240,6 +240,7 @@ class CodePeopleSearchInPlace {
 							</tr>
 						</tbody>
 					</table>
+					
 					<h3>'.__('Elements to display', $this->text_domain).'</h3>
 					<table class="form-table">	
 						<tbody>
@@ -352,6 +353,19 @@ class CodePeopleSearchInPlace {
 									<input type="checkbox" name="post_metadata" id="post_metadata" onclick="forbiddenOption(this);" />
 								</td>
 							</tr>
+							<tr>
+								<th colspan="2">
+								'.__('If you are using in your website some of plugins listed below, press the related button for searching in its custom post-types and taxonomies.').'
+								</th>
+							</tr>
+							<tr>
+								<th colspan="2">
+								<input type="button" class="button-secondary" value="WooCommerce" onclick="window.alert(\'This feature is available only for the advanced version of Search in Place\');" /> 
+								<input type="button" class="button-secondary" value="WP e-Commerce" onclick="window.alert(\'This feature is available only for the advanced version of Search in Place\');" /> 
+								<input type="button" class="button-secondary" value="Jigoshop" onclick="window.alert(\'This feature is available only for the advanced version of Search in Place\');" /> 
+								<input type="button" class="button-secondary" value="Ready! Ecommerce Shopping Cart" onclick="window.alert(\'This feature is available only for the advanced version of Search in Place\');" /> 
+								</th>
+							</tr>
 							<tr valign="top">
 								<th>
 									'.__('Posts Type:').'
@@ -360,7 +374,16 @@ class CodePeopleSearchInPlace {
 									
 									<input type="text" value="post" disabled style="color:#999999;" class="post-type" />  enabled by default <br />
 									<input type="text" value="page" disabled style="color:#999999;" class="post-type" />  <br />
-							        <input type="button" value="Add new type" class="button-primary" onclick="window.alert(\'This feature is available only on the commercial version\');"/>
+							        <input type="button" value="Add new type" class="button-primary" onclick="window.alert(\'This feature is available only in the commercial version of plugin\');" />
+								</td>
+							</tr>
+							
+							<tr>
+								<th>
+									'.__('Taxonomy:').'
+								</th>
+								<td>
+									<input type="button" id="add_taxonomy" value="Add new taxonomy" class="button-primary" onclick="window.alert(\'The searching in taxonomies is possible only in the commercial version of plugin\');" />
 								</td>
 							</tr>
 						</tbody>
@@ -408,6 +431,7 @@ class CodePeopleSearchInPlace {
 							</td></tr>
 						</tbody>
 					</table>
+					<p style="border:1px solid #FFCC66;background-color:#FFFFCC;padding:10px;">'.__('If you require some of features listed above, don\'t doubt to upgrade to the advanced version of Search in Place', $this->text_domain).'. <a href="http://wordpress.dwbooster.com/content-tools/search-in-place" target="_blank">'.__('CLICK HERE for more information').'</a></p>
 					<input type="hidden" name="search_in_place_submit" value="ok" />
 					<div class="submit"><input type="submit" class="button-primary" value="'.__('Update Settings', $this->text_domain).'" /></div>
 				</form>
