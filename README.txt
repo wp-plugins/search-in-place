@@ -21,12 +21,8 @@ Search in Place improves blog search by displaying query results in real time. I
 
 *  Performs **real time search** as you enter search criteria;
 *  Use a friendly AJAX technology for searching;
-*  Groups search results **by post type** (post, page, attachment or other post type entered by the user);
-*  Allows to **highlight the keywords** used to run the search, in search results and resulting pages; 
-*  Allows to search in **metadata** associated to the posts and **taxonomies**; 
-*  Includes the integration with the most popular plugins for **ecommerce** in WordPress;
+*  Groups search results **by post type** (post, page, attachment);
 *  Allows to **limit the number of elements** in the dynamic search results;
-*  Allows to customize the **box colors**;
 *  Offers a different navigation option on the website.
 
 If you want more information about this plugin or another one don't doubt to visit my website:
@@ -49,35 +45,13 @@ If you want more information about this plugin or another one don't doubt to vis
 
 **Enter a minimum number of characters to start a search:** The dynamic search will be activated only when the entered search term equals or exceeds the number of characters specified in this setup field.
 
-**Posts/Pages metadata (additional data of articles):** Allows to search the terms in metadata associated to the articles.
-
 **Elements to display:** defines the elements that will be shown for each dynamic search result. The post title will always be visible, but the featured image, the author, the publication date, and the post summary can be visible or not depending on this setting option.
-
-**Post type:** allows to enter additional post types for searching. Some plugins include new post types to treat products, catalogs or any other new element.
-
-**Taxonomies:** allows to include taxonomies as criteria for searching. Some post types have associated taxonomies that help to describe or identify the post.
-
-**Predefined plugins**: the search in place allows a very easy **integration** with a number of **predefined plugins**, that are popular in the community.
 
 **Select the Date Format:** allows to select the format of publication date to be shown in the dynamic search results.
 
 **Enter the number of characters for post summaries:**  if you choose to display post summaries in search results, you can use this option to limit the amount of characters  in these summaries.
 
-**Background color:** Select the background color of results box.
-
-**Border color:** Select the border color of results box.
-
-**Label text color:** Select the text color of labels.
-
-**Label background color:** Select the background color of labels section. The label's sections is a gradient.
-
-**Background color of active item:** Select the background color of item when the mouse is set over it.
-
-**In Search Page/Highlight the terms in result:** Check this option if you wish to highlight the terms that were searched, in the dynamic search results.
-
 **In Search Page/Identify the posts type in search result:** if this option is checked, each search result will be identified by type (post or page). 
-
-**In Resulting Pages/Highlight the terms in result:** Check this option if you wish to highlight the terms that were searched, in the resulting pages.
 
 == Frequently Asked Questions ==
 
