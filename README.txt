@@ -1,6 +1,6 @@
 === Search in Place ===
 Contributors: codepeople
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GZX2Y9BBJKWN2
+Donate link: http://wordpress.dwbooster.com/content-tools/search-in-place
 Tags: search, ajax, post, posts, page, post search, page search, content, title, highlight, attachment, navigation
 Requires at least: 3.0.5
 Tested up to: 3.5
