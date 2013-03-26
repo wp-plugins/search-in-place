@@ -1,7 +1,12 @@
 jQuery(function(){
 (function ($){
 	var searchInPlace = function(){
-		$('.item', '.search-in-place').live('mouseover mouseout', function(){$(this).toggleClass('active');})
+        if(!jQuery.fn.live) jQuery.fn.live = jQuery.fn.on;
+        
+		$('.item', '.search-in-place').live('mouseover mouseout', function(){$(this).toggleClass('active');});
+        $('.item').live('mousedown', function(){
+            document.location = $(this).find('a').attr('href');
+        });
 	};
 
 	searchInPlace.prototype = {
