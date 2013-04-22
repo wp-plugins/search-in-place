@@ -25,6 +25,17 @@ Search in Place improves blog search by displaying query results in real time. I
 *  Allows to **limit the number of elements** in the dynamic search results;
 *  Offers a different navigation option on the website.
 
+The base plugin, available for free from the WordPress Plugin Directory has all the features you need to create a store for sell downloads on your website.
+
+**Premium Features:**
+
+*   Allows **highlight** the criteria for searching in results;
+*   Allows the searching in **metadata and taxonomies** associated to the post;
+*   Allows to define additional **post_types** to be considered for searching;
+*   Includes the integration with popular plugins like: **WooCommerce**, **WP e-Commerce**, **Jigoshop**, **Ready! Ecommerce Shopping Cart** and more;
+*   Include labels in the search results page;
+*   Allows to customize the **box colors**;
+
 If you want more information about this plugin or another one don't doubt to visit my website:
 
 [http://wordpress.dwbooster.com/content-tools/search-in-place](http://wordpress.dwbooster.com/content-tools/search-in-place "CodePeople WordPress Repository")
