@@ -1,13 +1,14 @@
 jQuery(function(){
 (function ($){
 	var searchInPlace = function(){
-        if(!jQuery.fn.live) jQuery.fn.live = jQuery.fn.on;
-        
-		$('.item', '.search-in-place').live('mouseover mouseout', function(){$(this).toggleClass('active');});
-        $('.item').live('mousedown', function(){
-            document.location = $(this).find('a').attr('href');
-        });
-	};
+        if(jQuery.fn.on){
+            $(document).on('mouseover mouseout', '.search-in-place>.item', function(){$(this).toggleClass('active');})
+                       .on('mousedown', '.search-in-place>.item', function(){document.location = $(this).find('a').attr('href');});
+        }else{
+            $('.search-in-place>.item').live('mouseover mouseout', function(){$(this).toggleClass('active');})
+                                       .live('mousedown', function(){document.location = $(this).find('a').attr('href');});
+        }
+    };
 
 	searchInPlace.prototype = {
 		active : null,
