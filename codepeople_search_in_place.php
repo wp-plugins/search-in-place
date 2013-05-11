@@ -51,4 +51,5 @@ add_action('init', 'CodePeopleSearchInPlace');
 add_action('admin_menu', 'CodePeopleSearchInPlace_admin');
 add_action('wp_ajax_nopriv_search_in_place', array(&$codepeople_search_in_place_obj, 'populate'));
 add_action('wp_ajax_search_in_place', array(&$codepeople_search_in_place_obj, 'populate'));
+add_action('pre_get_posts', array(&$codepeople_search_in_place_obj, 'modifySearch'));
 ?>

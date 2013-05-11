@@ -5,6 +5,7 @@ class CodePeopleSearchInPlace {
 	
 	private $text_domain = 'codepeople_search_in_place';
 	private $javascriptVariable;
+    private $id_list = array();
 	
 	/*
 		Load the language file and initialize the javascript object to pass to the client side
@@ -34,7 +35,7 @@ class CodePeopleSearchInPlace {
 	/*
 		The most important method for search process, populate the list of results.
 	*/
-	public function populate() {
+    public function populate() {
 		global $wp_query, $wpdb;
 		
 		$counter = 0;
@@ -55,8 +56,13 @@ class CodePeopleSearchInPlace {
 		
 		// Get the attachments that include the search terms
 		$posts = array_merge($wp_query->posts, $wpdb->get_results("SELECT * FROM $wpdb->posts WHERE post_type='attachment' AND post_status='inherit' AND (post_title LIKE '$s%' OR post_content LIKE '$s%' OR post_name LIKE '$s%') AND post_parent IN (SELECT ID FROM $wpdb->posts WHERE post_status='publish') LIMIT $limit", OBJECT));
-		
-		foreach($posts as $result){
+        
+        foreach($posts as $result){
+            if(in_array($result->ID, $this->id_list)){
+                continue;
+            }else{
+                array_push($this->id_list, $result->ID);
+            }
 			$counter++;
 			
 			if($counter > $limit) // Check the limit of search results
@@ -75,33 +81,41 @@ class CodePeopleSearchInPlace {
 			
 			// Include the thumbnail in search results
 			if(get_option('search_in_place_display_thumbnail')){
-				if ( function_exists('has_post_thumbnail') && has_post_thumbnail($result->ID) ) {
-					// If post thumbnail is used
-					$obj->thumbnail = wp_get_attachment_thumb_url(get_post_thumbnail_id($result->ID, 'thumbnail'));
-				}elseif(function_exists('get_post_image_id')) {
-					// Support for WP 2.9 post thumbnails
-					$imgID = get_post_image_id($result->ID);
-					$img = wp_get_attachment_image_src($imgID, apply_filters('post_image_size', 'thumbnail'));
-					$obj->thumbnail = $img[0];
-				}
-				else {
-					// If not post thumbnail, grab the first image from the post
-					// Get images for this post
-					$imgArr =& get_children('post_type=attachment&post_mime_type=image&post_parent=' . $result->ID );
-					
-					// If images exist for this page
-					if($imgArr) {
-						$flag = PHP_INT_MAX;
-						
-						foreach($imgArr as $img) {
-							if($img->menu_order < $flag){
-								$flag = $img->menu_order;
-								$img_selected = $img;	
-							}
-						}
-						$obj->thumbnail = wp_get_attachment_thumb_url($img_selected->ID);
-					}
-				}
+                if($result->post_type == 'attachment'){
+                    if(strpos($result->post_mime_type, 'image') !== false){
+                        $obj->thumbnail = wp_get_attachment_thumb_url( $result->ID );
+                    }
+				}else{
+                
+                    if ( function_exists('has_post_thumbnail') && has_post_thumbnail($result->ID) ) {
+                        // If post thumbnail is used
+                        $obj->thumbnail = wp_get_attachment_thumb_url(get_post_thumbnail_id($result->ID, 'thumbnail'));
+                    }elseif(function_exists('get_post_image_id')) {
+                        // Support for WP 2.9 post thumbnails
+                        $imgID = get_post_image_id($result->ID);
+                        $img = wp_get_attachment_image_src($imgID, apply_filters('post_image_size', 'thumbnail'));
+                        $obj->thumbnail = $img[0];
+                    }
+                    else {
+                        // If not post thumbnail, grab the first image from the post
+                        // Get images for this post
+                        $imgArr =& get_children('post_type=attachment&post_mime_type=image&post_parent=' . $result->ID );
+                        
+                        // If images exist for this page
+                        if($imgArr) {
+                            $flag = PHP_INT_MAX;
+                            
+                            foreach($imgArr as $img) {
+                                if($img->menu_order < $flag){
+                                    $flag = $img->menu_order;
+                                    $img_selected = $img;	
+                                }
+                            }
+                            $obj->thumbnail = wp_get_attachment_thumb_url($img_selected->ID);
+                        }
+                    }
+                
+                }    
 			}
 			
 			// Include a post summary in search results, the summary is limited to the number of letters declared in configuration
@@ -153,7 +167,17 @@ class CodePeopleSearchInPlace {
 		print json_encode($post_list);die;
 	
 	} // End populate
-	
+    
+    /*
+		Allow for search in posts, pages and attachments
+	*/
+	function modifySearch($query){
+		if($query->is_search){
+            $query->set('post_type', array('post', 'page', 'attachment'));
+            $query->set('post_status', array('publish', 'inherit'));
+        }
+	} // End modifySearch
+    
 	/*
 		Set a link to plugin settings
 	*/
