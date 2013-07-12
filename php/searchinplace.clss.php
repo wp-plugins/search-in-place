@@ -55,7 +55,7 @@ class CodePeopleSearchInPlace {
 		$wp_query->query($params);
 		
 		// Get the attachments that include the search terms
-		$posts = array_merge($wp_query->posts, $wpdb->get_results("SELECT * FROM $wpdb->posts WHERE post_type='attachment' AND post_status='inherit' AND (post_title LIKE '$s%' OR post_content LIKE '$s%' OR post_name LIKE '$s%') AND post_parent IN (SELECT ID FROM $wpdb->posts WHERE post_status='publish') LIMIT $limit", OBJECT));
+		$posts = array_merge($wp_query->posts, $wpdb->get_results("SELECT * FROM $wpdb->posts WHERE post_type='attachment' AND post_status='inherit' AND (post_title LIKE '$s%' OR post_content LIKE '$s%' OR post_name LIKE '$s%' OR post_excerpt LIKE '$s%') AND post_parent IN (SELECT ID FROM $wpdb->posts WHERE post_status='publish') LIMIT $limit", OBJECT));
         
         foreach($posts as $result){
             if(in_array($result->ID, $this->id_list)){

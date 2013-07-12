@@ -88,7 +88,7 @@ jQuery(function(){
 				for(var i=0, h = l.length; i < h; i++){
 					s += '<div class="item">'; 
 					if(l[i].thumbnail){ 
-						s += '<div class="thumbnail"><img src="'+l[i].thumbnail+'" style="visibility:hidden;float:left;position:absolute;" /></div><div class="data" style="margin-left:'+(me.config.image_width+5)+'px;">';
+						s += '<div class="thumbnail"><img src="'+l[i].thumbnail+'" style="visibility:hidden;float:left;position:absolute;" /></div><div class="data" style="margin-left:'+(me.config.image_width+5)+'px;min-height:'+me.config.image_height+'px;">';
 					}else{
 						s += '<div class="data">';
 					}	
