@@ -68,7 +68,7 @@ jQuery(function(){
 			
 			// Set the results container
 			if(o){
-				s.width(f.width()).css({'left' : o.left, 'top' : o.top + f.height()}).appendTo('body');
+				s.width(f.width()).css({'left' : o.left, 'top' : (parseInt(o.top) + f.height()+5)+'px'}).appendTo('body');
 				me.displayLoading(s);
 				
 				me.active = jQuery.get( codepeople_search_in_place.root + '/wp-admin/admin-ajax.php', p, function(r){
