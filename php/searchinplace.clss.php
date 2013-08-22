@@ -18,7 +18,7 @@ class CodePeopleSearchInPlace {
 									'empty' => __('0 results', $this->text_domain),
 									'char_number' => get_option('search_in_place_minimum_char_number'),
 									'root'	 => get_site_url(),
-									'home'	 => get_settings('home')
+									'home'	 => get_option('home')
 							);
 		
 		// Fake variables to allow the translation for Poedit application

@@ -17,7 +17,7 @@ include 'php/searchinplace.clss.php';
 				return; 
 			} 
 			if (function_exists('add_options_page')) { 
-				add_options_page('Search In Place', 'Search In Place', 9, basename(__FILE__), array(&$codepeople_search_in_place_obj, 'printAdminPage')); 
+				add_options_page('Search In Place', 'Search In Place', 'manage_options', basename(__FILE__), array(&$codepeople_search_in_place_obj, 'printAdminPage')); 
 			} 
 		}    
 	}
