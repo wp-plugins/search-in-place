@@ -3,10 +3,12 @@ jQuery(function(){
 	var searchInPlace = function(){
         if(jQuery.fn.on){
             $(document).on('mouseover mouseout', '.search-in-place>.item', function(){$(this).toggleClass('active');})
-                       .on('mousedown', '.search-in-place>.item', function(){document.location = $(this).find('a').attr('href');});
+                       .on('mousedown', '.search-in-place>.item', function(){document.location = $(this).find('a').attr('href');})
+                       .on('click', '.search-in-place>.label.more', function(){document.location = $(this).find('a').attr('href');});
         }else{
             $('.search-in-place>.item').live('mouseover mouseout', function(){$(this).toggleClass('active');})
-                                       .live('mousedown', function(){document.location = $(this).find('a').attr('href');});
+                                       .live('mousedown', function(){document.location = $(this).find('a').attr('href');})
+                                       .live('click', '.search-in-place>.label.more', function(){document.location = $(this).find('a').attr('href');});
         }
     };
 
