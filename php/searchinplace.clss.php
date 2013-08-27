@@ -171,7 +171,7 @@ class CodePeopleSearchInPlace {
     /*
 		Allow for search in posts, pages and attachments
 	*/
-	function modifySearch($query){
+	function modifySearch(&$query){
 		if($query->is_search){
             $query->set('post_type', array('post', 'page', 'attachment'));
             $query->set('post_status', array('publish', 'inherit'));
