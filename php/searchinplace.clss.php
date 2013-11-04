@@ -122,9 +122,11 @@ class CodePeopleSearchInPlace {
 			if(get_option('search_in_place_display_summary')){
 				$length = get_option('search_in_place_summary_char_number');
 				if(!empty($result->post_excerpt)){
-					$resume = substr(apply_filters("localization", $result->post_excerpt), 0, $length);
+					$resume = preg_replace( '/\[[^\]]*\]/', '', $result->post_excerpt );
+					$resume = substr(apply_filters("localization", $resume), 0, $length);
 				}else{
-					$c = strip_tags(apply_filters("localization", $result->post_content));
+					$resume = preg_replace( '/\[[^\]]*\]/', '', $result->post_content );
+					$c = strip_tags(apply_filters("localization", $resume));
 					$l = strlen($c);
 					$p = strpos(strtolower($c), strtolower($s));
 					
