@@ -246,7 +246,7 @@ class CodePeopleSearchInPlace {
 				<form method="post" action="'.$_SERVER['REQUEST_URI'].'">
 					<h2>Search In Place</h2>
 					<p  style="border:1px solid #E6DB55;margin-bottom:10px;padding:5px;background-color: #FFFFE0;">'.__('For more information go to the <a href="http://wordpress.dwbooster.com/content-tools/search-in-place" target="_blank">Search in Place</a> plugin page.').' <br />'.__('For any issues with Search in Place, go to our <a href="http://wordpress.dwbooster.com/contact-us" target="_blank">contact page</a> and leave us a message.').'
-					<br/><br />'.__('If you want test the premium version of Search in Place go to the following links:<br/> <a href="http://www.dreamweaverdownloads.com/demos/search-in-place/wp-login.php" target="_blank">Administration area: Click to access the administration area demo</a><br/> <a href="http://www.dreamweaverdownloads.com/demos/search-in-place/" target="_blank">Public page: Click to access the Search in Place</a>').'</p>
+					<br/><br />'.__('If you want test the premium version of Search in Place go to the following links:<br/> <a href="http://demos.net-factor.com/search-in-place/wp-login.php" target="_blank">Administration area: Click to access the administration area demo</a><br/> <a href="http://demos.net-factor.com/search-in-place/" target="_blank">Public page: Click to access the Search in Place</a>').'</p>
 					<table class="form-table">
 						<tbody>
 							<tr valign="top">

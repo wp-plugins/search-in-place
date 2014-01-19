@@ -48,9 +48,9 @@ The base plugin, available for free from the WordPress Plugin Directory has all 
 
 **Demo of Premium Version of Plugin**
 
-[http://www.dreamweaverdownloads.com/demos/search-in-place/wp-login.php](http://www.dreamweaverdownloads.com/demos/search-in-place/wp-login.php "Click to access the Administration Area demo")
+[http://demos.net-factor.com/search-in-place/wp-login.php](http://demos.net-factor.com/search-in-place/wp-login.php "Click to access the Administration Area demo")
 
-[http://www.dreamweaverdownloads.com/demos/search-in-place/](http://www.dreamweaverdownloads.com/demos/search-in-place/ "Click to access the Public Page")
+[http://demos.net-factor.com/search-in-place/](http://demos.net-factor.com/search-in-place/ "Click to access the Public Page")
 
 
 The usual WordPress behavior is searching in the posts, but the post's search may not be sufficient if you are using plugins that includes custom post_types. The WordPress born as a blog manager, but this great platform has been evolved through its plugins until allow be used as a content management system, an eCommerce (WooCommerce, WP e-Commerce, etc.) or a social network, so the search feature require evolve too and allow searching by products, users and any custom post_types. Search in Place came to fill this empty in WordPress, Search in Place allow to search in custom post_types, taxonomies associated to the post_types or its metadata.But Search in Place don't stop there, with Search in Place is possible to format the results, set labels to identify the search results, and highlight the terms in the resulting pages.
