@@ -157,19 +157,19 @@ jQuery(function(){
 		}
 	};
 
-	jQuery(function(){
-		var	searchObj = new searchInPlace();
+	
+	var	searchObj = new searchInPlace();
+	
+	if((codepeople_search_in_place.highlight*1) && codepeople_search_in_place.terms && codepeople_search_in_place.terms.length > 0){
+		searchObj.highlightTerms(codepeople_search_in_place.terms);
+	}
+	
+	if((codepeople_search_in_place.identify_post_type)*1){
+		$('.type-post').prepend('<div class="search-in-place-type-post">'+codepeople_search_in_place.post_title+'</div>');
+		$('.type-page').prepend('<div class="search-in-place-type-page">'+codepeople_search_in_place.page_title+'</div>');
+	}
+	
+	searchObj.autocomplete();
 		
-		if((codepeople_search_in_place.highlight*1) && codepeople_search_in_place.terms && codepeople_search_in_place.terms.length > 0){
-			searchObj.highlightTerms(codepeople_search_in_place.terms);
-		}
-		
-		if((codepeople_search_in_place.identify_post_type)*1){
-			$('.type-post').prepend('<div class="search-in-place-type-post">'+codepeople_search_in_place.post_title+'</div>');
-			$('.type-page').prepend('<div class="search-in-place-type-page">'+codepeople_search_in_place.page_title+'</div>');
-		}
-		
-		searchObj.autocomplete();
-	});	
 })(jQuery);
 });
