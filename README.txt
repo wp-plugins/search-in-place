@@ -15,25 +15,25 @@ Search in Place improves blog search by displaying query results in real time. I
 Search in Place features:
 
 	» Performs real time search as you enter search criteria
-	» Groups search results by post type (post, page, attachment)
+	» Groups search results by post type (post, page)
 	» Allows to limit the number of elements in the dynamic search results
 	» Offers a different navigation option on the website
 	» Use a friendly AJAX technology for searching
 
 **Search in Place** improves blog search by displaying query results in real time. Search in place displays a list with results dynamically as you enter the search criteria. 
 
-**Search in Place** groups search results by their type, labeling them as post, page, attachment or the post type entered, and highlights the searched terms in search page and resulting pages. Search in Place advanced allows to search in metadata too.
+**Search in Place** groups search results by their type, labeling them as post, page or the post type entered, and highlights the searched terms in search page and resulting pages. Search in Place advanced allows to search in metadata too.
 
 
 **More about the Main Features:**
 
 *  Performs **real time search** as you enter search criteria;
 *  Use a friendly AJAX technology for searching;
-*  Groups search results **by post type** (post, page, attachment);
+*  Groups search results **by post type** (post, page);
 *  Allows to **limit the number of elements** in the dynamic search results;
 *  Offers a different navigation option on the website.
 
-Frequently, while performing a search in a blog with terms we think are present in the blog's pages and posts, after various search attempts and a slow/tedious process of page reloads, we feel frustration because we haven’t found the page/post being searched for. With Search in Place the search process is easier and seamless. The Search in Place makes the post search in real time, allowing the correction of the search criteria without reloading the website (The basic version of "Search in Place" makes the search in posts, pages and attachments).
+Frequently, while performing a search in a blog with terms we think are present in the blog's pages and posts, after various search attempts and a slow/tedious process of page reloads, we feel frustration because we haven’t found the page/post being searched for. With Search in Place the search process is easier and seamless. The Search in Place makes the post search in real time, allowing the correction of the search criteria without reloading the website (The basic version of "Search in Place" makes the search in posts and pages).
 
 The base plugin, available for free from the WordPress Plugin Directory has all the features you need to create a store for sell downloads on your website.
 
@@ -96,7 +96,7 @@ The Seach in Place use the English language by default, but includes the followi
 
 = Q: Why to use Search in Place? =
 
-A: Search in Place allows to find posts, pages or attachments without abandon the webpage.
+A: Search in Place allows to find posts and pages without abandon the webpage (the premium version of plugin allows include custom post types).
 
 = Q: Why the posts search doesn't display the thumbnails in the search results? =
 

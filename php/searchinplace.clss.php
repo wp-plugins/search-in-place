@@ -24,7 +24,6 @@ class CodePeopleSearchInPlace {
 		// Fake variables to allow the translation for Poedit application
 		$a = __('post', $this->text_domain); 		
 		$a = __('page', $this->text_domain); 		
-		$a = __('attachment', $this->text_domain);
 	} // End init
 	
 	
@@ -38,7 +37,6 @@ class CodePeopleSearchInPlace {
     public function populate() {
 		global $wp_query, $wpdb;
 		
-		$counter = 0;
 		$limit = get_option('search_in_place_number_of_posts'); // Number of results to display
 		$post_list = array();
 		
@@ -53,9 +51,7 @@ class CodePeopleSearchInPlace {
           'post_status' => 'publish',
         );
 		$wp_query->query($params);
-		
-		// Get the attachments that include the search terms
-		$posts = array_merge($wp_query->posts, $wpdb->get_results("SELECT * FROM $wpdb->posts WHERE post_type='attachment' AND post_status='inherit' AND (post_title LIKE '$s%' OR post_content LIKE '$s%' OR post_name LIKE '$s%' OR post_excerpt LIKE '$s%') AND post_parent IN (SELECT ID FROM $wpdb->posts WHERE post_status='publish') LIMIT $limit", OBJECT));
+		$posts = $wp_query->posts;
         
         foreach($posts as $result){
             if(in_array($result->ID, $this->id_list)){
@@ -63,13 +59,7 @@ class CodePeopleSearchInPlace {
             }else{
                 array_push($this->id_list, $result->ID);
             }
-			$counter++;
-			
-			if($counter > $limit) // Check the limit of search results
-				break;
-				
 			$obj = new stdClass();
-			
 			// Include the author in search results
 			if(get_option('search_in_place_display_author') == 1){
 				$author = get_userdata($result->post_author);
@@ -175,8 +165,8 @@ class CodePeopleSearchInPlace {
 	*/
 	function modifySearch(&$query){
 		if($query->is_search){
-            $query->set('post_type', array('post', 'page', 'attachment'));
-            $query->set('post_status', array('publish', 'inherit'));
+            $query->set('post_type', array('post', 'page'));
+            $query->set('post_status', array('publish'));
         }
 	} // End modifySearch
     
@@ -304,156 +294,156 @@ class CodePeopleSearchInPlace {
 						</tbody>
 					</table>
 					<p style="border:1px solid #FFCC66;background-color:#FFFFCC;padding:10px;">'.__('The next options are available only for the advanced version of Search in Place', $this->text_domain).'. <a href="http://wordpress.dwbooster.com/content-tools/search-in-place" target="_blank">'.__('CLICK HERE for more information').'</a></p>	
-					<h3>'.__('Search box design').'</h3>
+					<h3  style="color:#AAA;">'.__('Search box design').'</h3>
 					<table class="form-table">	
 						<tbody>
 							<tr valign="top">
 								<th scope="row">
-									<label for="box_background_color">'.__("Background color").'</label>
+									<label for="box_background_color" style="color:#AAA;">'.__("Background color").'</label>
 								</th>
 								<td>
-									<input type="text" name="box_background_color" id="box_background_color" value="#F9F9F9" disabled />
+									<input type="text" name="box_background_color" id="box_background_color" value="#F9F9F9" disabled readonly />
 								</td>
 							</tr>
 							<tr valign="top">
 								<th scope="row">
-									<label for="box_border_color">'.__("Border color").'</label>
+									<label for="box_border_color"  style="color:#AAA;">'.__("Border color").'</label>
 								</th>
 								<td>
-									<input type="text" name="box_border_color" id="box_border_color" value="#DDDDDD" disabled />
+									<input type="text" name="box_border_color" id="box_border_color" value="#DDDDDD" disabled readonly />
 								</td>
 							</tr>
 							<tr valign="top">
 								<th scope="row">
-									<label for="label_text_color">'.__("Label text color").'</label>
+									<label for="label_text_color"  style="color:#AAA;">'.__("Label text color").'</label>
 								</th>
 								<td>
-									<input type="text" name="label_text_color" id="label_text_color" value="#333333" disabled />
+									<input type="text" name="label_text_color" id="label_text_color" value="#333333" disabled readonly />
 								</td>
 							</tr>
 							<tr valign="top">
 								<th scope="row">
-									<label for="label_text_shadow">'.__("Label text shadow").'</label>
+									<label for="label_text_shadow"  style="color:#AAA;">'.__("Label text shadow").'</label>
 								</th>
 								<td>
-									<input type="text" name="label_text_shadow" id="label_text_shadow" value="#FFFFFF" disabled />
+									<input type="text" name="label_text_shadow" id="label_text_shadow" value="#FFFFFF" disabled readonly />
 								</td>
 							</tr>
 							<tr valign="top">
 								<th scope="row">
-									<label>'.__("Label background color").'</label>
+									<label  style="color:#AAA;">'.__("Label background color").'</label>
 								</th>
 								<td>
 									Gradient start color: 
-									<input type="text" name="label_background_start_color" id="label_background_start_color" value="#F9F9F9" disabled />
+									<input type="text" name="label_background_start_color" id="label_background_start_color" value="#F9F9F9" disabled readonly />
 									Gradient end color:
-									<input type="text" name="label_background_end_color" id="label_background_end_color" value="#ECECEC" disabled />
+									<input type="text" name="label_background_end_color" id="label_background_end_color" value="#ECECEC" disabled readonly />
 								</td>
 							</tr>
 							<tr valign="top">
 								<th scope="row">
-									<label for="active_item_background_color">'.__("Background color of active item").'</label>
+									<label for="active_item_background_color"  style="color:#AAA;">'.__("Background color of active item").'</label>
 								</th>
 								<td>
-									<input type="text" name="active_item_background_color" id="active_item_background_color" value="#FFFFFF" disabled />
+									<input type="text" name="active_item_background_color" id="active_item_background_color" value="#FFFFFF" disabled readonly />
 								</td>
 							</tr>
 						</tbody>
 					</table>	
 					
-					<h3>'.__('Search in', $this->text_domain).'</h3>
+					<h3  style="color:#AAA;">'.__('Search in', $this->text_domain).'</h3>
 					<table class="form-table">	
 						<tbody>
 							<tr valign="top">
-								<th>
+								<th  style="color:#AAA;">
 									'.__('Posts/Pages common data (title, content):').'
 								</th>
 								<td>
-									<input type="checkbox" name="post_data" id="post_data" checked disabled />
+									<input type="checkbox" name="post_data" id="post_data" checked disabled readonly />
 								</td>
 							</tr>
 							<tr valign="top">
-								<th>
+								<th  style="color:#AAA;">
 									'.__('Posts/Pages metadata (additional data of articles):').'
 								</th>
 								<td>
-									<input type="checkbox" name="post_metadata" id="post_metadata" onclick="forbiddenOption(this);" />
+									<input type="checkbox" name="post_metadata" id="post_metadata" onclick="forbiddenOption(this);" readonly disabled />
 								</td>
 							</tr>
 							<tr>
-								<th colspan="2">
+								<th colspan="2"  style="color:#AAA;">
 								'.__('If you are using in your website some of plugins listed below, press the related button for searching in its custom post-types and taxonomies.').'
 								</th>
 							</tr>
 							<tr>
 								<th colspan="2">
-								<input type="button" class="button-secondary" value="WooCommerce" onclick="window.alert(\'This feature is available only for the advanced version of Search in Place\');" /> 
-								<input type="button" class="button-secondary" value="WP e-Commerce" onclick="window.alert(\'This feature is available only for the advanced version of Search in Place\');" /> 
-								<input type="button" class="button-secondary" value="Jigoshop" onclick="window.alert(\'This feature is available only for the advanced version of Search in Place\');" /> 
-								<input type="button" class="button-secondary" value="Ready! Ecommerce Shopping Cart" onclick="window.alert(\'This feature is available only for the advanced version of Search in Place\');" /> 
+								<input type="button" class="button-secondary" value="WooCommerce" onclick="window.alert(\'This feature is available only for the advanced version of Search in Place\');" disabled /> 
+								<input type="button" class="button-secondary" value="WP e-Commerce" onclick="window.alert(\'This feature is available only for the advanced version of Search in Place\');" disabled /> 
+								<input type="button" class="button-secondary" value="Jigoshop" onclick="window.alert(\'This feature is available only for the advanced version of Search in Place\');" disabled /> 
+								<input type="button" class="button-secondary" value="Ready! Ecommerce Shopping Cart" onclick="window.alert(\'This feature is available only for the advanced version of Search in Place\');" disabled /> 
 								</th>
 							</tr>
 							<tr valign="top">
-								<th>
+								<th  style="color:#AAA;">
 									'.__('Posts Type:').'
 								</th>
-								<td>
+								<td  style="color:#AAA;">
 									
-									<input type="text" value="post" disabled style="color:#999999;" class="post-type" />  enabled by default <br />
-									<input type="text" value="page" disabled style="color:#999999;" class="post-type" />  <br />
-							        <input type="button" value="Add new type" class="button-primary" onclick="window.alert(\'This feature is available only in the commercial version of plugin\');" />
+									<input type="text" value="post" disabled style="color:#999999;" class="post-type" readonly />  enabled by default <br />
+									<input type="text" value="page" disabled style="color:#999999;" class="post-type" readonly />  <br />
+							        <input type="button" value="Add new type" class="button-primary" onclick="window.alert(\'This feature is available only in the commercial version of plugin\');" disabled />
 								</td>
 							</tr>
 							
 							<tr>
-								<th>
+								<th  style="color:#AAA;">
 									'.__('Taxonomy:').'
 								</th>
 								<td>
-									<input type="button" id="add_taxonomy" value="Add new taxonomy" class="button-primary" onclick="window.alert(\'The searching in taxonomies is possible only in the commercial version of plugin\');" />
+									<input type="button" id="add_taxonomy" value="Add new taxonomy" class="button-primary" onclick="window.alert(\'The searching in taxonomies is possible only in the commercial version of plugin\');" disabled />
 								</td>
 							</tr>
 						</tbody>
 					</table>
-					<h3>'.__('In Search Page', $this->text_domain).'</h3>
+					<h3  style="color:#AAA;">'.__('In Search Page', $this->text_domain).'</h3>
 					<table class="form-table">	
 						<tbody>
 							<tr valign="top">
 								<th scope="row">
-									<label for="highlight">'.__("Highlight the terms in result", $this->text_domain).'</label>
+									<label for="highlight"  style="color:#AAA;">'.__("Highlight the terms in result", $this->text_domain).'</label>
 								</th>
 								<td>
-									<input type="checkbox" name="highlight" id="highlight" onclick="forbiddenOption(this);" />
+									<input type="checkbox" name="highlight" id="highlight" onclick="forbiddenOption(this);" disabled readonly />
 								</td>
 							</tr>
-							<tr><td colspan="2" style="font-style:italic;" >
+							<tr><td colspan="2" style="font-style:italic;color:#AAA;" >
 							'.__('Highlights the search terms on search page.', $this->text_domain).'
 							</td></tr>
 							<tr valign="top">
 								<th scope="row">
-									<label for="mark_post_type">'.__("Identify the posts type in search result", $this->text_domain).'</label>
+									<label for="mark_post_type"  style="color:#AAA;">'.__("Identify the posts type in search result", $this->text_domain).'</label>
 								</th>
 								<td>
-									<input type="checkbox" name="mark_post_type" id="mark_post_type" onclick="forbiddenOption(this);" />
+									<input type="checkbox" name="mark_post_type" id="mark_post_type" onclick="forbiddenOption(this);" disabled readonly />
 								</td>
-								<tr><td colspan="2" style="font-style:italic;" >
+								<tr><td colspan="2" style="font-style:italic;color:#AAA;" >
 								'.__('Indicates the type of document (article or page)', $this->text_domain).'
 								</td></tr>
 							</tr>
 						</tbody>
 					</table>
-					<h3>'.__('In Resulting Pages', $this->text_domain).'</h3>
+					<h3  style="color:#AAA;">'.__('In Resulting Pages', $this->text_domain).'</h3>
 					<table class="form-table">	
 						<tbody>
 							<tr valign="top">
 								<th scope="row">
-									<label for="highlight">'.__("Highlight the terms in resulting pages", $this->text_domain).'</label>
+									<label for="highlight"  style="color:#AAA;">'.__("Highlight the terms in resulting pages", $this->text_domain).'</label>
 								</th>
 								<td>
-									<input type="checkbox" name="highlight_resulting_page" id="highlight_resulting_page" onclick="forbiddenOption(this);" />
+									<input type="checkbox" name="highlight_resulting_page" id="highlight_resulting_page" onclick="forbiddenOption(this);" readonly disabled />
 								</td>
 							</tr>
-							<tr><td colspan="2" style="font-style:italic;" >
+							<tr><td colspan="2" style="font-style:italic;color:#AAA;" >
 							'.__('Highlights the search terms on resulting page.', $this->text_domain).'
 							</td></tr>
 						</tbody>
