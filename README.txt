@@ -1,7 +1,7 @@
 === Search in Place ===
 Contributors: codepeople
 Donate link: http://wordpress.dwbooster.com/content-tools/search-in-place
-Tags: search,ajax,post,posts,page,post search,page search,content,title,highlight,attachment,navigation
+Tags: search,ajax,post,posts,page,post search,page search,content,title,highlight,attachment,navigation,search custom post type,custom post,woocommerce
 Requires at least: 3.0.5
 Tested up to: 4.0
 Stable tag: trunk
