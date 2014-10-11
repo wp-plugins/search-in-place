@@ -1,7 +1,7 @@
 === Search in Place ===
 Contributors: codepeople
 Donate link: http://wordpress.dwbooster.com/content-tools/search-in-place
-Tags: search,ajax,post,posts,page,post search,page search,content,title,highlight,attachment,navigation,search custom post type,custom post,woocommerce
+Tags: search,ajax,post,posts,page,post search,page search,content,title,highlight,attachment,navigation,search custom post type,custom post,woocommerce,admin,image,images
 Requires at least: 3.0.5
 Tested up to: 4.0
 Stable tag: trunk
@@ -119,13 +119,23 @@ http://wordpress.dwbooster.com/faq/search-in-place
 == Changelog ==
 
 = 1.0.3 =
-This version resolves an issue with the "More Results" link in sub-pages and multisite installations.
-The use of taxonomies as criteria for searching.
-The integration with very popular plugins.
-Customizing the search results box.
+
+* This version resolves an issue with the "More Results" link in sub-pages and multi-site installations.
+* The use of taxonomies as criteria for searching.
+* The integration with very popular plugins.
+* Customizing the search results box.
+* Updated the administration interface.
+* Shown in the search result list, the thumbnail version of featured images.
+* Improves the items selection in the search result list.
+* Includes the images captions between the elements for searching.
+* Improves the compatibility with themes non standards.
+* Removes the shortcodes from descriptions in the results list.
+* The attachments have been removed from results.
 
 = 1.0.2 =
-If the post has associated a Featured image, it will be shown on dynamic search dialog.
+
+* If the post has associated a Featured image, it will be shown on dynamic search dialog.
 
 = 1.0.1 =
-First Release
+
+* First Release
