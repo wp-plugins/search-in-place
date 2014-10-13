@@ -134,7 +134,9 @@ jQuery(function(){
 		},
 		
 		removeLoading : function(c, e){
-			var s = (typeof c.length != 'undefined') ? codepeople_search_in_place.empty : '<a href="'+codepeople_search_in_place.home+'?s='+this.search+'&submit=Search">'+codepeople_search_in_place.more+' &gt;</a>';
+			var home = codepeople_search_in_place.home;
+            home += ( home.indexOf( '?' ) == -1 ) ? '?' : '&' ;
+			var s = (typeof c.length != 'undefined') ? codepeople_search_in_place.empty : '<a href="'+home+'s='+this.search+'&submit=Search">'+codepeople_search_in_place.more+' &gt;</a>';
 			e.find('.loading').parent().addClass('more').html(s);
 			
 		},
