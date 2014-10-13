@@ -164,7 +164,7 @@ class CodePeopleSearchInPlace {
 		Allow for search in posts, pages and attachments
 	*/
 	function modifySearch(&$query){
-		if($query->is_search){
+		if(!is_admin() && $query->is_search){
             $query->set('post_type', array('post', 'page'));
             $query->set('post_status', array('publish'));
         }
