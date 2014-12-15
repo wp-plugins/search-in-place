@@ -25,7 +25,7 @@ jQuery(function(){
 		
 		autocomplete : function(){
 			var me = this;
-			$(("input[name='s']")).attr('autocomplete', 'off').bind('keyup focus', 
+			$(("input[name='s']")).attr('autocomplete', 'off').bind('input keyup focus', 
 				function(){
 					var s = $(this),
 						v = s.val();
