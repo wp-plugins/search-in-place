@@ -3,7 +3,7 @@ Contributors: codepeople
 Donate link: http://wordpress.dwbooster.com/content-tools/search-in-place
 Tags: search,ajax,post,posts,page,post search,page search,content,title,highlight,attachment,navigation,search custom post type,custom post,woocommerce,admin,image,images
 Requires at least: 3.0.5
-Tested up to: 4.0
+Tested up to: 4.1
 Stable tag: trunk
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
