@@ -41,6 +41,7 @@ $codepeople_search_in_place_obj->init();
 
 // Plugin activation and deactivation
 register_activation_hook(__FILE__, array(&$codepeople_search_in_place_obj, 'activePlugin'));
+add_action( 'wpmu_new_blog', array( &$codepeople_search_in_place_obj, 'install_new_blog' ), 10, 6 );
 register_deactivation_hook(__FILE__, array(&$codepeople_search_in_place_obj, 'deactivePlugin'));
 
 $plugin = plugin_basename(__FILE__);

@@ -465,7 +465,7 @@ class CodePeopleSearchInPlace {
 	/*
 		Set configuration variables
 	*/
-	function activePlugin(){
+	function _initialize_configuration_variables(){
 		update_option('search_in_place_number_of_posts', 10);
 		update_option('search_in_place_minimum_char_number', 3);
 		update_option('search_in_place_summary_char_number', 20);
@@ -473,7 +473,40 @@ class CodePeopleSearchInPlace {
 		update_option('search_in_place_display_date', 1);
 		update_option('search_in_place_display_summary', 1);
 		update_option('search_in_place_display_author', 1);
+	}
+	
+	function activePlugin( $networkwide ){
+		global $wpdb;
+			
+		if (function_exists('is_multisite') && is_multisite()) {
+			if ($networkwide) {
+				$old_blog = $wpdb->blogid;
+				// Get all blog ids
+				$blogids = $wpdb->get_col( "SELECT blog_id FROM $wpdb->blogs" );
+				foreach ($blogids as $blog_id) {
+					switch_to_blog($blog_id);
+					$this->_initialize_configuration_variables();
+				}
+				switch_to_blog($old_blog);
+				return;
+			}
+		}
+		$this->_initialize_configuration_variables();
 	} // End activePlugin
+	
+	/* 
+	* A new blog has been created in a multisite WordPress
+	*/
+	function install_new_blog( $blog_id, $user_id, $domain, $path, $site_id, $meta ){
+		global $wpdb;
+		if ( is_plugin_active_for_network() ) 
+		{
+			$current_blog = $wpdb->blogid;
+			switch_to_blog( $blog_id );
+			$this->_initialize_configuration_variables();
+			switch_to_blog( $current_blog );
+		}
+	}
 	
 	/*
 		Remove configuration variables
