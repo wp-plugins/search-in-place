@@ -1,0 +1,130 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: codepeople_search_in_place_advanced\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-06-28 13:33-0500\n"
+"PO-Revision-Date: 2012-06-28 13:35-0500\n"
+"Last-Translator: Erick Olivera <olivera.erick@gmail.com>\n"
+"Language-Team: CodePeople <onlinesupport@hotdreamweaver.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-Basepath: d:\\02_www\\www.wp.com\\wp-content\\plugins\\codepeople_search_in_place\\\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Country: SPAIN\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-SearchPath-0: d:\\02_www\\www.wp.com\\wp-content\\plugins\\codepeople_search_in_place\n"
+
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/BK_2012-06-19/codepeople_search_in_place.php:34
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/php/searchinplace.clss.php:16
+msgid "More Results"
+msgstr "Más Resultados"
+
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/BK_2012-06-19/codepeople_search_in_place.php:35
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/php/searchinplace.clss.php:17
+msgid "0 results"
+msgstr "0 Resultados"
+
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/BK_2012-06-19/codepeople_search_in_place.php:58
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/php/searchinplace.clss.php:23
+msgid "post"
+msgstr "post"
+
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/BK_2012-06-19/codepeople_search_in_place.php:59
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/php/searchinplace.clss.php:24
+msgid "page"
+msgstr "página"
+
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/BK_2012-06-19/codepeople_search_in_place.php:60
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/php/searchinplace.clss.php:25
+msgid "attachment"
+msgstr "adjunto"
+
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/BK_2012-06-19/php/searchinplace.clss.php:126
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/php/searchinplace.clss.php:157
+msgid "Settings"
+msgstr "Configuración"
+
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/BK_2012-06-19/php/searchinplace.clss.php:178
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/php/searchinplace.clss.php:213
+msgid "Enter the number of posts to display"
+msgstr "Entre el número de posts a mostrar"
+
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/BK_2012-06-19/php/searchinplace.clss.php:186
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/php/searchinplace.clss.php:221
+msgid "Enter the minimum of characters number for start the search"
+msgstr "Entre la cantidad mínima de caractéres requeridos para iniciar la búsqueda"
+
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/BK_2012-06-19/php/searchinplace.clss.php:194
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/php/searchinplace.clss.php:229
+msgid "Elements to display"
+msgstr "Elementos a mostrar"
+
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/BK_2012-06-19/php/searchinplace.clss.php:199
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/php/searchinplace.clss.php:234
+msgid "Post title"
+msgstr "Título del post"
+
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/BK_2012-06-19/php/searchinplace.clss.php:199
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/php/searchinplace.clss.php:234
+msgid "Post thumbnail"
+msgstr "Imagen del post"
+
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/BK_2012-06-19/php/searchinplace.clss.php:199
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/php/searchinplace.clss.php:234
+msgid "Post author"
+msgstr "Autor post"
+
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/BK_2012-06-19/php/searchinplace.clss.php:199
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/php/searchinplace.clss.php:234
+msgid "Post date"
+msgstr "Fecha del post"
+
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/BK_2012-06-19/php/searchinplace.clss.php:199
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/php/searchinplace.clss.php:234
+msgid "Post summary"
+msgstr "Resumen del post"
+
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/BK_2012-06-19/php/searchinplace.clss.php:208
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/php/searchinplace.clss.php:243
+msgid "Select the date format"
+msgstr "Seleccione el formato para la fecha"
+
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/BK_2012-06-19/php/searchinplace.clss.php:221
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/php/searchinplace.clss.php:256
+msgid "Enter the number of characters for posts' summaries"
+msgstr "Entre el número de caractéres a mostrar en el resumen"
+
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/BK_2012-06-19/php/searchinplace.clss.php:230
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/php/searchinplace.clss.php:287
+msgid "Update Settings"
+msgstr "Actualizar la configuración"
+
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/php/searchinplace.clss.php:168
+msgid "Settings Updated"
+msgstr "Configuración Actualizada"
+
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/php/searchinplace.clss.php:264
+msgid "The next options are only available for the advanced version of Search in Place"
+msgstr "Las siguientes opciones están solo disponibles para la versión avanzada de Search in Place"
+
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/php/searchinplace.clss.php:265
+msgid "In Search Page"
+msgstr "En la página de búsqueda"
+
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/php/searchinplace.clss.php:270
+msgid "Highlight the terms in result"
+msgstr "Resaltar los términos en los resultados"
+
+#: d:\02_www\www.wp.com\wp-content\plugins\codepeople_search_in_place/php/searchinplace.clss.php:278
+msgid "Identify the posts type in search result"
+msgstr "Identificar el tipo de los posts en el resultado de las búsquedas"
+
+#, fuzzy
+#~ msgid "Post"
+#~ msgstr "post"
+
+#, fuzzy
+#~ msgid "Page"
+#~ msgstr "página"
