@@ -2,7 +2,7 @@
 /*  
 Plugin Name: Search In Place
 Plugin URI: http://wordpress.dwbooster.com/content-tools/search-in-place
-Version: 1.0.3
+Version: 1.0.4
 Author: <a href="http://www.codepeople.net">CodePeople</a>
 Description: Search in Place improves blog search by displaying query results in real time. Search in place displays a list with results dynamically as you enter the search criteria. Search in place groups search results by their type, labeling them as post, page, or attachment. To get started: 1) Click the "Activate" link to the left of this description.
 */
@@ -53,4 +53,5 @@ add_action('admin_menu', 'CodePeopleSearchInPlace_admin');
 add_action('wp_ajax_nopriv_search_in_place', array(&$codepeople_search_in_place_obj, 'populate'));
 add_action('wp_ajax_search_in_place', array(&$codepeople_search_in_place_obj, 'populate'));
 add_action('pre_get_posts', array(&$codepeople_search_in_place_obj, 'modifySearch'));
+add_filter('posts_request', array(&$codepeople_search_in_place_obj, 'modifySearchQuery'), 99);
 ?>

@@ -17,8 +17,8 @@ class CodePeopleSearchInPlace {
 									'more'  => __('More Results', $this->text_domain),
 									'empty' => __('0 results', $this->text_domain),
 									'char_number' => get_option('search_in_place_minimum_char_number'),
-									'root'	 => get_site_url(),
-									'home'	 => get_option('home')
+									'root'	 => trim( get_admin_url( get_current_blog_id() ), '/' ).'/',
+									'home'	 => get_home_url( get_current_blog_id() )
 							);
 		
 		// Fake variables to allow the translation for Poedit application
@@ -34,8 +34,25 @@ class CodePeopleSearchInPlace {
 	/*
 		The most important method for search process, populate the list of results.
 	*/
+	public function modifySearchQuery( $query )
+	{
+		global $cp_search_in_place;
+		if( ( !is_admin() && is_search() && isset( $_GET[ 's' ] ) ) || !empty( $cp_search_in_place ) )
+		{	
+			$connection_operator = get_option( 'search_in_place_connection_operator', 'or' );
+			$connection_operator = ( ( empty( $connection_operator ) ) ? "OR" : $connection_operator );
+			$query = preg_replace( "/\)\)\s*AND\s*\(\(/i", ")) ".$connection_operator." ((", $query );
+		}	
+		return $query;
+		
+	} // End modifySearchQuery
+	
     public function populate() {
-		global $wp_query, $wpdb;
+		global $wp_query, $wpdb, $cp_search_in_place;
+		
+		$cp_search_in_place = true;
+		
+		add_filter('posts_request', array(&$this, 'modifySearchQuery'));
 		
 		$limit = get_option('search_in_place_number_of_posts'); // Number of results to display
 		$post_list = array();
@@ -46,11 +63,12 @@ class CodePeopleSearchInPlace {
 		$s = $_GET['s'];
 		$params = array(
           's' => $s,
-          'showposts' => $limit,
+		  'showposts' => $limit,
           'post_type' => 'any',
           'post_status' => 'publish',
         );
-		$wp_query->query($params);
+		
+		$wp_query->query( $params );
 		$posts = $wp_query->posts;
         
         foreach($posts as $result){
@@ -208,7 +226,7 @@ class CodePeopleSearchInPlace {
 			$search_in_place_display_date = (!empty($_POST['date'])) ? $_POST['date'] : 0;
 			$search_in_place_display_summary = (!empty($_POST['summary'])) ? $_POST['summary'] : 0;
 			$search_in_place_display_author = (!empty($_POST['author'])) ? $_POST['author'] : 0;
-			
+			$search_in_place_connection_operator = ( !empty( $_POST[ 'connection_operator' ] ) ) ? $_POST[ 'connection_operator' ] : 'or';
 			
 			update_option('search_in_place_number_of_posts', $search_in_place_number_of_posts);
 			update_option('search_in_place_minimum_char_number', $search_in_place_minimum_char_number);
@@ -218,7 +236,7 @@ class CodePeopleSearchInPlace {
 			update_option('search_in_place_display_date', $search_in_place_display_date);
 			update_option('search_in_place_display_summary', $search_in_place_display_summary);
 			update_option('search_in_place_display_author', $search_in_place_display_author);
-			
+			update_option('search_in_place_connection_operator', $search_in_place_connection_operator);
 			
 		}else{
 			$search_in_place_number_of_posts = get_option('search_in_place_number_of_posts');
@@ -229,8 +247,10 @@ class CodePeopleSearchInPlace {
 			$search_in_place_display_date = get_option('search_in_place_display_date');
 			$search_in_place_display_summary = get_option('search_in_place_display_summary');
 			$search_in_place_display_author = get_option('search_in_place_display_author');
+			$search_in_place_connection_operator = get_option('search_in_place_connection_operator', 'or' );
+			if( empty( $search_in_place_connection_operator ) ) $search_in_place_connection_operator = 'or';
 		}
-		
+
 		echo '
 			<div class="wrap">
 				<form method="post" action="'.$_SERVER['REQUEST_URI'].'">
@@ -253,6 +273,16 @@ class CodePeopleSearchInPlace {
 								</th>
 								<td>
 									<input type="text" id="minimum_char_number" name="minimum_char_number" value="'.$search_in_place_minimum_char_number.'" />
+								</td>
+							</tr>
+							<tr valign="top">
+								<th scope="row">
+									<label for="operator">'.__('Connection operator', $this->text_domain).'</label>
+								</th>
+								<td>
+									<input type="radio" name="connection_operator" value="or" '.( ( $search_in_place_connection_operator == 'or' ) ? 'CHECKED' : '' ).' /> OR&nbsp;&nbsp;&nbsp;&nbsp;
+									<input type="radio" name="connection_operator" value="and" '.( ( $search_in_place_connection_operator == 'and' ) ? 'CHECKED' : '' ).' /> AND <br />
+									'.__( 'Get results with any or all of words in the search box.',$this->text_domain ).'
 								</td>
 							</tr>
 						</tbody>

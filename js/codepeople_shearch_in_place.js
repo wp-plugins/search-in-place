@@ -71,7 +71,7 @@ jQuery(function(){
 			s.width(e.outerWidth()).css({'left' : o.left, 'top' : (parseInt(o.top) + e.outerHeight()+5)+'px'}).appendTo('body');
 			me.displayLoading(s);
 			
-			me.active = jQuery.get( codepeople_search_in_place.root + '/wp-admin/admin-ajax.php', p, function(r){
+			me.active = jQuery.get( codepeople_search_in_place.root + 'admin-ajax.php', p, function(r){
 				me.displayResult(r, s);
 				me.removeLoading(r, s);
 			}, "json");
