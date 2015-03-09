@@ -1,7 +1,7 @@
 === Search in Place ===
 Contributors: codepeople
 Donate link: http://wordpress.dwbooster.com/content-tools/search-in-place
-Tags: search,ajax,post,posts,page,post search,page search,content,title,highlight,attachment,navigation,search custom post type,custom post,woocommerce,admin,image,images,taxonomy
+Tags: search,ajax,post,posts,page,post search,page search,content,title,highlight,attachment,navigation,search custom post type,custom post,woocommerce,admin,image,images,taxonomy,all or any terms
 Requires at least: 3.0.5
 Tested up to: 4.1
 Stable tag: 1.0.4
@@ -107,6 +107,10 @@ A: The thumbnails are get from the featured images assigned to the post or page.
 A: Modify the value of field "Enter the number of posts to display" in the settings page of Search in Place.
 
 If you require more information, please visit our FAQ page in:
+
+= Q: How to display the pages/posts that include all or any of terms typed in the search box? =
+
+A: In the settings page of the plugin there is a new attribute for selecting if get the pages/posts with all terms entered through the search box (AND), or any of terms (OR)
 
 http://wordpress.dwbooster.com/faq/search-in-place
 
