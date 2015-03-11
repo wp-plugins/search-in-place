@@ -112,6 +112,14 @@ If you require more information, please visit our FAQ page in:
 
 A: In the settings page of the plugin there is a new attribute for selecting if get the pages/posts with all terms entered through the search box (AND), or any of terms (OR)
 
+= Q: How to find the products created by WooCommerce? =
+
+A: The Pro version of the plugin allows searching in custom post types, and taxonomies. 
+
+In the settings page of the plugin there are two attributes: the "Post type", and "Taxonomy". You simply should press the "Add new type" button, and type the name of post_type, the process to add the taxonomies is similar, press the "Taxonomy" button, and type the taxonomy name. 
+
+For common plugins like: WooCommerce, WP e-Commerce, Jigoshop, and Ready! Ecommerce Shopping Cart, with only pressing the corresponding button, all post types and taxonomies used by these plugins are added to the "Search in Place".
+
 http://wordpress.dwbooster.com/faq/search-in-place
 
 == Screenshots ==
