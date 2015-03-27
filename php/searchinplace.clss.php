@@ -537,19 +537,5 @@ class CodePeopleSearchInPlace {
 			switch_to_blog( $current_blog );
 		}
 	}
-	
-	/*
-		Remove configuration variables
-	*/
-	function deactivePlugin() {
-		delete_option('search_in_place_number_of_posts');
-		delete_option('search_in_place_minimum_char_number');
-		delete_option('search_in_place_summary_char_number');
-		delete_option('search_in_place_display_thumbnail');
-		delete_option('search_in_place_display_date');
-		delete_option('search_in_place_display_summary');
-		delete_option('search_in_place_display_author');
-	} // End deactivePlugin
-	
 } // End SearchInPlace
 ?>

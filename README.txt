@@ -4,7 +4,7 @@ Donate link: http://wordpress.dwbooster.com/content-tools/search-in-place
 Tags: search,ajax,post,posts,page,post search,page search,content,title,highlight,attachment,navigation,search custom post type,custom post,woocommerce,admin,image,images,taxonomy,all or any terms
 Requires at least: 3.0.5
 Tested up to: 4.1
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -130,6 +130,10 @@ http://wordpress.dwbooster.com/faq/search-in-place
 
 == Changelog ==
 
+= 1.0.5 =
+
+* Deletes the plugin settings in the uninstall process, and not in deactivation.
+
 = 1.0.4 =
 
 * Allows searching the pages/posts that include all words, or any of the words in the search box.
@@ -157,6 +161,12 @@ http://wordpress.dwbooster.com/faq/search-in-place
 * First Release
 
 == Upgrade Notice ==
+
+= 1.0.5 =
+
+* Deletes the plugin settings in the uninstall process, and not in deactivation.
+
+Important note: If you are using the Professional version don't update via the WP dashboard but using your personal update link. Contact us if you need further information: http://wordpress.dwbooster.com/support
 
 = 1.0.4 =
 
