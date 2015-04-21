@@ -107,10 +107,10 @@ class CodePeopleSearchInPlace {
                     else {
                         // If not post thumbnail, grab the first image from the post
                         // Get images for this post
-                        $imgArr =& get_children('post_type=attachment&post_mime_type=image&post_parent=' . $result->ID );
+                        $imgArr = @get_children('post_type=attachment&post_mime_type=image&post_parent=' . $result->ID );
                         
                         // If images exist for this page
-                        if($imgArr) {
+                        if( !empty( $imgArr ) ) {
                             $flag = PHP_INT_MAX;
                             
                             foreach($imgArr as $img) {
